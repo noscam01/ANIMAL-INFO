@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: blueviolet;
+    height: 100vh;
+    position: relative;
+
+}
+.wrapper{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    background-color: white;
+    
+    border-radius: 10px;
+}
+
+.cards, .card, .view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    height: 700px;
+    width: 700px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card{
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    width: calc(100%/4);
+    height: calc(100%/4);
+}
+
+.card .view{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 7px;
+    background-color: white;
+    backface-visibility: hidden;
+}
+
+.front-view img{
+    width: 130px;
+}
+.back-view img{
+    width: 130px;
+    height: 100px;
+}
+.back-view{
+    transform: rotateY(-180deg);
+}
+
+.btns{
+    margin: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+}
+#startButton, #resetButton{
+    width: 200px;
+    height: 50px;
+    font-size: 35px;
+    border-radius: 10px;
+    border: none;
+}
+#startButton{
+    background-color: green;
+}
+#resetButton{
+    background-color: yellow;
+}
+#timer{
+    position: absolute;
+    top: 10px;
+    left: 45%;
+    font-size: 25px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#result{
+    position: absolute;
+    top: 40px;
+    left: 45%;
+    font-size: 30px;
+    color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card .back-view{
+    transform: rotateY(-180deg);
+}
+.btns {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    justify-content: space-between;
+}
+
+#startButton, #resetButton{
+    width: 200px;
+    height: 50px;
+    font-size: 35px;
+    border-radius: 10px;
+    border: none;
+}
+
+#startButton {
+    background-color: green;
+}
+
+#resetButton {
+    background-color: yellow;
+}
+#timer {
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    font-size: 25px;
+    color: white;
+}
+
+#result {
+    position: absolute;
+    top: 50px;
+    left: 45%;
+    color: yellow;
+    font-size: 30px;
+}
+
+.flipped{
+ transform: rotateY(180deg);
+}
+.card{
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+#startButton:hover,#resetButton:hover{
+    color: white;
+    font-weight: bold;
+}
