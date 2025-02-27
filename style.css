@@ -28,7 +28,6 @@ header a {
     margin-right: 40px;
 }
 
-/* carousel */
 .carousel {
     height: 100vh;
     margin-top: -50px;
@@ -178,7 +177,7 @@ header a {
     z-index: 1;
 }
 
-
+/* тексттің анимациясы */
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
@@ -190,6 +189,7 @@ header a {
     animation: showContent .5s 1s linear 1 forwards;
 }
 
+/* тексттің көрінуі */
 @keyframes showContent {
     to {
         transform: translateY(0px);
@@ -198,6 +198,7 @@ header a {
     }
 }
 
+/* тексттің анимациясының жылдамдығы */
 .carousel .list .item:nth-child(1) .content .title {
     animation-delay: 1.2s !important;
 }
@@ -214,6 +215,7 @@ header a {
     animation-delay: 1.8s !important;
 }
 
+/* фонның анимациясы */
 .carousel.next .list .item:nth-child(1) img {
     width: 150px;
     height: 220px;
@@ -224,6 +226,7 @@ header a {
     animation: showImage .5s linear 1 forwards;
 }
 
+/* фонның анимациясы */
 @keyframes showImage {
     to {
         bottom: 0;
@@ -234,25 +237,7 @@ header a {
     }
 }
 
-.carousel.next .thumbnail .item:nth-last-child(1) {
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
 
-.carousel.prev .list .item img {
-    z-index: 100;
-}
-
-@keyframes showThumbnail {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-}
-
-.carousel.next .thumbnail {
-    animation: effectNext .5s linear 1 forwards;
-}
 
 @keyframes effectNext {
     from {
@@ -271,6 +256,7 @@ header a {
     top: 0;
 }
 
+/* анимация астындағы фон */
 .carousel.next .time,
 .carousel.prev .time {
     animation: runningTime 3s linear 1 forwards;
@@ -317,30 +303,4 @@ header a {
 .carousel.next .arrows button,
 .carousel.prev .arrows button {
     pointer-events: none;
-}
-
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons {
-    animation: contentOut 1.5s linear 1 forwards !important;
-}
-
-@keyframes contentOut {
-    to {
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-
-@media screen and (max-width: 678px) {
-    .carousel .list .item .content {
-        padding-right: 0;
-    }
-
-    .carousel .list .item .content .title {
-        font-size: 30px;
-    }
 }

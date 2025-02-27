@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1>Animal Quiz Games</h1>
+        <p>Test your knowledge about animals with these fun quizzes!</p>
+    </div>
+    <div class="divGames">
+        <div id="games"></div>
+    </div>
+
+    <script>
+        const games = [
+            { name: 'All things panda', img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRC-PxyW2nvDz3NDv_GWtRVm6zIL55in7zfaIhgZNi1DmSxhUET', url: 'https://kids.nationalgeographic.com/games/quizzes/article/all-things-panda-quiz' },
+            { name: 'Big Bear', img: 'https://i.natgeofe.com/k/9ea8d1f9-ac54-41b6-93cd-6fe640304658/bear-quiz-thumbnail_2x3.jpg', url: 'https://kids.nationalgeographic.com/games/quizzes/article/big-bear-quiz' },
+            { name: 'Desert Animals', img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTi9ZtA-xhHPharYUM7cFfrkXGAkHMr8HbjEAbI1mm48dV6tdPx', url: 'https://kids.nationalgeographic.com/games/quizzes/article/desert-animals' },
+            { name: 'Awesome', img: 'mai.png', url: 'https://kids.nationalgeographic.com/games/quizzes/article/awesome-quiz-whiz' },
+            { name: 'Super', img: 'jar.png', url: 'https://kids.nationalgeographic.com/games/article/super-quiz-whiz' },
+            { name: 'Great Apes', img: 'https://i.natgeofe.com/k/1c8d87e0-df5e-417a-84cf-93d8cff97dfc/quiz_greatapes_16x9.jpg?w=1200', url: 'https://kids.nationalgeographic.com/games/quizzes/article/quiz-whiz-great-apes' },
+            { name: 'Cheetahs', img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS6CxyXsX9vENICT_ljRSt4wgxZ2L56Nr3tGcWQET3h4p0PX0Su', url: 'https://kids.nationalgeographic.com/games/quizzes/article/desert-animals' },
+            { name: 'Giraffes', img: 'giraf.png', url: 'https://kids.nationalgeographic.com/games/quizzes/article/giraffe-quiz' },
+        ];
+
+        const container = document.getElementById('games');
+
+        games.forEach(game => {
+            const card = document.createElement('div');
+            card.classList.add('game-card');
+
+            const gameContent = `
+        <img src="${game.img}" alt="${game.name}" class="game-image">
+        <h2>${game.name}</h2>
+    `;
+
+            if (game.url) {
+                card.innerHTML = `
+            <a href="${game.url}" target="_blank" style="text-decoration: none; color: inherit;">
+                ${gameContent}
+            </a>
+        `;
+            } else {
+                card.innerHTML = gameContent;
+            }
+
+            container.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>

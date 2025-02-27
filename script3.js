@@ -67,7 +67,7 @@ function checkForMatch(){
         flippedCards = []
         guesedCards++
     }else{
-       setTimeout(() =>{
+       setTimeout(() => {
         card1.classList.remove('flipped')
         card2.classList.remove('flipped')
         flippedCards = []
